@@ -11,6 +11,17 @@
 
 #include "RpcTread.h"
 
-RpcTread::RpcTread(const std::string &threadName) {
+RpcTread::RpcTread(const std::string &threadName, const std::function<void()> &callback) {
     this->threadName = threadName;
+    rpcThread = std::thread(callback);
+}
+
+RpcTread::~RpcTread() {
+
+}
+
+void RpcTread::wait() {
+    if (rpcThread.joinable()) {
+        rpcThread.join();
+    }
 }

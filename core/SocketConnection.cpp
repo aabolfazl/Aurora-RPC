@@ -9,25 +9,4 @@
  *
  */
 
-#ifndef RPCTREAD_H
-#define RPCTREAD_H
-
-
-#include <thread>
-
-class RpcTread {
-    RpcTread() = delete;
-
-    RpcTread(const std::string &threadName, const std::function<void()> &callback);
-
-    ~RpcTread();
-
-    void wait();
-
-private:
-    std::thread rpcThread;
-    std::string threadName;
-};
-
-
-#endif
+#include "SocketConnection.h"

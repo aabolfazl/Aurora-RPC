@@ -10,6 +10,12 @@ add_executable(aRPC
         core/TcpSocket.cpp
         core/TcpSocket.h
         core/Define.h
-        core/RpcTread.cpp core/RpcTread.h core/ByteBuffer.cpp core/ByteBuffer.h)
+        core/RpcTread.cpp
+        core/RpcTread.h
+        core/ByteBuffer.cpp
+        core/ByteBuffer.h
+        core/SocketConnection.cpp
+        core/SocketConnection.h
+        )
 
 target_link_libraries(aRPC -lpthread)
